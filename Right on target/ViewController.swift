@@ -9,6 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var number = 0
+    var round = 0
+    var points = 0
+    
     @IBOutlet var slider: UISlider!
     @IBOutlet var label: UILabel!
     @IBOutlet var button: UIButton!
@@ -55,6 +59,40 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func checkNumber() {
+        print(round)
+        if round == 0 {
+            number = Int.random(in: 1...50)
+            label.text = String(number)
+            round = 1
+        } else {
+            let numSlider = Int(slider.value.rounded())
+            if numSlider < number {
+                points += 50 - number + numSlider
+            } else if numSlider > number {
+                points += 50 + number - numSlider
+            } else {
+                points += 50
+            }
+            round += 1
+        }
+        if round == 5 {
+            print("dsfsdfsdfsdf")
+            let alert = UIAlertController(
+                title: "FINISH",
+                message: "Your scored: \(points) points",
+                preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Начать заново", comment: "Default action"), style: .default, handler: { _ in
+            NSLog("The \"OK\" alert occured.")
+            }))
+            self.present(alert, animated: true, completion: nil)
+            round = 0
+            points = 0
+            
+        }
+        
+    }
+    
+    
 }
 
