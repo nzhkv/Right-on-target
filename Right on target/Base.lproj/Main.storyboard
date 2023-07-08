@@ -46,6 +46,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AVD-yO-LFd" secondAttribute="trailing" constant="20" id="wa3-iQ-SsA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="button" destination="Mwc-Sv-UqK" id="5Ax-r1-Q4h"/>
+                        <outlet property="label" destination="Ycj-C0-sZq" id="cw5-aK-3bP"/>
+                        <outlet property="slider" destination="AVD-yO-LFd" id="v0b-S7-EJ3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
