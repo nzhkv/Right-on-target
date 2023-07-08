@@ -74,7 +74,6 @@ class ViewController: UIViewController {
             } else {
                 points += 50
             }
-            round += 1
         }
         if round == 5 {
             print("dsfsdfsdfsdf")
@@ -82,15 +81,15 @@ class ViewController: UIViewController {
                 title: "FINISH",
                 message: "Your scored: \(points) points",
                 preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("Начать заново", comment: "Default action"), style: .default, handler: { _ in
-            NSLog("The \"OK\" alert occured.")
-            }))
-            self.present(alert, animated: true, completion: nil)
-            round = 0
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Начать заново", comment: "Default action"), style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+            round = 1
             points = 0
-            
+        } else {
+            round += 1
         }
-        
+        number = Int.random(in: 1...50)
+        label.text = String(number)
     }
     
     
