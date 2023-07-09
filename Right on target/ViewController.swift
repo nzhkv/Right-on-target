@@ -30,8 +30,9 @@ class ViewController: UIViewController {
         button.layer.borderWidth = 1.0
         button.layer.borderColor = UIColor(named: "textColor")?.cgColor
         
-        game = Game(startValue: 1, endValue: 50, rounds: 5)
-        updateLabelWithSecretNumber(newText: String(game.currentSecretValue))
+        let generator = NumberGenerator(startRangeValue: 1, endRangeValue: 50)
+        game = Game(secretValueGenerator: generator, roundCount: 5)
+        updateLabelWithSecretNumber(newText: String(game.currentRound.currentSecretValue))
     }
     
     //MARK: update sekret Number
@@ -47,8 +48,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func checkNumber() {
-        game.calculateScore(with: Int(slider.value))
-        
+        game.currentRound.calculatedScore(with: Int(slider.value))
         if game.isGameEnded {
             showAlertWith(score: game.score)
             game.restartGame()
@@ -56,7 +56,7 @@ class ViewController: UIViewController {
             game.startNewRound()
         }
         
-        updateLabelWithSecretNumber(newText: String(game.currentSecretValue))
+        updateLabelWithSecretNumber(newText: String(game.currentRound.currentSecretValue))
     }
     
     

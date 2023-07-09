@@ -14,6 +14,8 @@
 		2E30011F2A599C5300AD7773 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E30011E2A599C5300AD7773 /* Assets.xcassets */; };
 		2E3001222A599C5300AD7773 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E3001202A599C5300AD7773 /* LaunchScreen.storyboard */; };
 		2E30012B2A5AA64A00AD7773 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E30012A2A5AA64A00AD7773 /* Game.swift */; };
+		2E30012D2A5AD16F00AD7773 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E30012C2A5AD16F00AD7773 /* Generator.swift */; };
+		2E30012F2A5AD38B00AD7773 /* GameRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E30012E2A5AD38B00AD7773 /* GameRound.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		2E3001212A599C5300AD7773 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E3001232A599C5300AD7773 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E30012A2A5AA64A00AD7773 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		2E30012C2A5AD16F00AD7773 /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
+		2E30012E2A5AD38B00AD7773 /* GameRound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRound.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				2E30012A2A5AA64A00AD7773 /* Game.swift */,
+				2E30012C2A5AD16F00AD7773 /* Generator.swift */,
+				2E30012E2A5AD38B00AD7773 /* GameRound.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -153,6 +159,8 @@
 				2E3001162A599C5200AD7773 /* AppDelegate.swift in Sources */,
 				2E3001182A599C5200AD7773 /* SceneDelegate.swift in Sources */,
 				2E30012B2A5AA64A00AD7773 /* Game.swift in Sources */,
+				2E30012F2A5AD38B00AD7773 /* GameRound.swift in Sources */,
+				2E30012D2A5AD16F00AD7773 /* Generator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,7 +319,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.NikolayZhukov.Right-on-target";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -342,7 +350,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.NikolayZhukov.Right-on-target";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
