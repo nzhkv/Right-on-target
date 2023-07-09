@@ -26,22 +26,43 @@ class Game: GameProtocol {
     private var currentRound: Int = 1
     var isGameEnded: Bool {
         if currentRound >= lastRound {
-            true
+            return true
         } else {
-            false
+            return false
         }
     }
     
+    init?(startValue: Int, endValue: Int, rounds: Int) {
+        guard startValue <= endValue else { return nil }
+        minSecretValue = startValue
+        maxSecretValue = endValue
+        lastRound = rounds
+        currentSecretValue = self.getNewSecretValue()
+    }
+    
     func restartGame() {
-        <#code#>
+        currentRound = 0
+        score = 0
+        startNewRound()
     }
     
     func startNewRound() {
-        <#code#>
+        currentSecretValue = self.getNewSecretValue()
+        currentRound += 1
     }
     
     func calculateScore(with value: Int) {
-        <#code#>
+        if value > currentSecretValue {
+            score += 50 - value + currentSecretValue
+        } else if value < currentSecretValue {
+            score += 50 - currentSecretValue + value
+        } else {
+            score += 50
+        }
+    }
+    
+    private func getNewSecretValue() -> Int {
+        (minSecretValue...maxSecretValue).randomElement()!
     }
     
     

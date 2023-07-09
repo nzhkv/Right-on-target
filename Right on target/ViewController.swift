@@ -9,9 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var number = 0
-    var round = 1
-    var points = 0
+    var game: Game!
     
     @IBOutlet var slider: UISlider!
     @IBOutlet var label: UILabel!
@@ -24,28 +22,6 @@ class ViewController: UIViewController {
         slider.minimumValue = 1
         slider.maximumValue = 50
         
-        
-        // gradient for slider
-        //        let gradientLayer = CAGradientLayer()
-        //        gradientLayer.frame = CGRect(x: 0, y: 0, width: slider.bounds.width, height: slider.bounds.height)
-        //
-        //        let startColor = UIColor(named: "startColor")
-        //        let endColor = UIColor(named: "endColor")
-        //
-        //        gradientLayer.colors = [startColor!, endColor!]
-        //        gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
-        //        gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
-        //
-        //        let maskLayer = CALayer()
-        //        maskLayer.frame = CGRect(x: 0, y: 0, width: slider.bounds.width * CGFloat(slider.value), height: slider.bounds.height)
-        //        maskLayer.borderColor = UIColor.black.cgColor
-        //        gradientLayer.mask = maskLayer
-        //        slider.layer.insertSublayer(gradientLayer, at: 0)
-        //
-        //        func sliderValueChanged(_ sender: UISlider) {
-        //            maskLayer.frame.size.width = slider.bounds.width * CGFloat(sender.value)
-        //        }
-        
         label.textColor = UIColor(named: "textColor")
         
         button.setTitle("Check", for: .normal)
@@ -54,35 +30,33 @@ class ViewController: UIViewController {
         button.layer.borderWidth = 1.0
         button.layer.borderColor = UIColor(named: "textColor")?.cgColor
         
-        number = Int.random(in: 1...50)
-        label.text = String(number)
-        
+        game = Game(startValue: 1, endValue: 50, rounds: 5)
+        updateLabelWithSecretNumber(newText: String(game.currentSecretValue))
     }
     
+    //MARK: update sekret Number
+    private func updateLabelWithSecretNumber(newText: String) {
+        label.text = newText
+    }
+    
+    private func showAlertWith(score: Int) {
+        let alert = UIAlertController(title: "FINISH", message: "You scored: \(score) points", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "New game", style: .default))
+        present(alert, animated: true)
+    }
+    
+    
     @IBAction func checkNumber() {
-        print(points)
-        let numSlider = Int(slider.value.rounded())
-        if numSlider < number {
-            points += 50 - number + numSlider
-        } else if numSlider > number {
-            points += 50 + number - numSlider
+        game.calculateScore(with: Int(slider.value))
+        
+        if game.isGameEnded {
+            showAlertWith(score: game.score)
+            game.restartGame()
         } else {
-            points += 50
+            game.startNewRound()
         }
-        if round == 5 {
-            let alert = UIAlertController(
-                title: "FINISH",
-                message: "Your scored: \(points) points",
-                preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("Начать заново", comment: "Default action"), style: .default, handler: nil))
-            present(alert, animated: true, completion: nil)
-            round = 1
-            points = 0
-        } else {
-            round += 1
-        }
-        number = Int.random(in: 1...50)
-        label.text = String(number)
+        
+        updateLabelWithSecretNumber(newText: String(game.currentSecretValue))
     }
     
     
