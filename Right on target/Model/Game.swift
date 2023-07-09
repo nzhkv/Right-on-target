@@ -19,11 +19,13 @@ protocol GameProtocol {
 
 class Game: GameProtocol {
     var score: Int = 0
+    var currentSecretValue: Int = 0
+    private var currentRound: Int = 1
+    
     private var minSecretValue: Int
     private var maxSecretValue: Int
-    var currentSecretValue: Int = 0
     private var lastRound: Int
-    private var currentRound: Int = 1
+    
     var isGameEnded: Bool {
         if currentRound >= lastRound {
             return true
@@ -37,7 +39,7 @@ class Game: GameProtocol {
         minSecretValue = startValue
         maxSecretValue = endValue
         lastRound = rounds
-        currentSecretValue = self.getNewSecretValue()
+        currentSecretValue = getNewSecretValue()
     }
     
     func restartGame() {
@@ -47,7 +49,7 @@ class Game: GameProtocol {
     }
     
     func startNewRound() {
-        currentSecretValue = self.getNewSecretValue()
+        currentSecretValue = getNewSecretValue()
         currentRound += 1
     }
     
