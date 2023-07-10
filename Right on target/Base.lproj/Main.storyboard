@@ -37,6 +37,9 @@
                                         <rect key="frame" x="246" y="0.0" width="188" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Color"/>
+                                        <connections>
+                                            <segue destination="StW-eh-Nzj" kind="show" id="ZNL-UQ-KY4"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -115,6 +118,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="905.63380281690149" y="-376.3358778625954"/>
+        </scene>
+        <!--Color View Controller-->
+        <scene sceneID="hgd-q6-Yvg">
+            <objects>
+                <viewController id="StW-eh-Nzj" customClass="ColorViewController" customModule="Right_on_target" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QKt-I8-GUv">
+                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="4Nc-v2-9Xn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="11v-6Q-Gha"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cg5-jj-8AA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="906" y="371"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Tj4-5d-WHP">
