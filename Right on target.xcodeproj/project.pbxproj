@@ -14,7 +14,7 @@
 		2E30011F2A599C5300AD7773 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E30011E2A599C5300AD7773 /* Assets.xcassets */; };
 		2E3001222A599C5300AD7773 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E3001202A599C5300AD7773 /* LaunchScreen.storyboard */; };
 		2E30012B2A5AA64A00AD7773 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E30012A2A5AA64A00AD7773 /* Game.swift */; };
-		2E30012D2A5AD16F00AD7773 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E30012C2A5AD16F00AD7773 /* Generator.swift */; };
+		2E30012D2A5AD16F00AD7773 /* GameFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E30012C2A5AD16F00AD7773 /* GameFactory.swift */; };
 		2E30012F2A5AD38B00AD7773 /* GameRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E30012E2A5AD38B00AD7773 /* GameRound.swift */; };
 		2E3001322A5AEB9A00AD7773 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3001312A5AEB9A00AD7773 /* MainViewController.swift */; };
 		2E3001342A5AF3FE00AD7773 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3001332A5AF3FE00AD7773 /* ColorViewController.swift */; };
@@ -32,7 +32,7 @@
 		2E3001212A599C5300AD7773 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E3001232A599C5300AD7773 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E30012A2A5AA64A00AD7773 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		2E30012C2A5AD16F00AD7773 /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
+		2E30012C2A5AD16F00AD7773 /* GameFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFactory.swift; sourceTree = "<group>"; };
 		2E30012E2A5AD38B00AD7773 /* GameRound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRound.swift; sourceTree = "<group>"; };
 		2E3001312A5AEB9A00AD7773 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2E3001332A5AF3FE00AD7773 /* ColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 			children = (
 				2E30012A2A5AA64A00AD7773 /* Game.swift */,
 				2E3001352A5BC32000AD7773 /* Color.swift */,
-				2E30012C2A5AD16F00AD7773 /* Generator.swift */,
+				2E30012C2A5AD16F00AD7773 /* GameFactory.swift */,
 				2E30012E2A5AD38B00AD7773 /* GameRound.swift */,
 				2E3001372A5BCBAA00AD7773 /* SecretValue.swift */,
 			);
@@ -183,7 +183,7 @@
 				2E3001382A5BCBAA00AD7773 /* SecretValue.swift in Sources */,
 				2E30012B2A5AA64A00AD7773 /* Game.swift in Sources */,
 				2E30012F2A5AD38B00AD7773 /* GameRound.swift in Sources */,
-				2E30012D2A5AD16F00AD7773 /* Generator.swift in Sources */,
+				2E30012D2A5AD16F00AD7773 /* GameFactory.swift in Sources */,
 				2E3001362A5BC32000AD7773 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,6 +334,7 @@
 				DEVELOPMENT_TEAM = 2H9WQTH3XU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Right on target/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -365,6 +366,7 @@
 				DEVELOPMENT_TEAM = 2H9WQTH3XU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Right on target/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
