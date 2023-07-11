@@ -12,7 +12,7 @@ final class GameFactory {
     static func getNumericGame() -> some GameProtocol {
         let minSecretValue = 1
         let maxSecretValue = 50
-        let secretValue = SecretNumericValue(initialValue: 0) { _ in
+        let secretValue = SecretNumericValue(initValue: 0) { _ in
             // замыкание для выбора случайного значения
             return Array(minSecretValue...maxSecretValue).randomElement()!
         }
@@ -31,7 +31,7 @@ final class GameFactory {
     
     static func getColorGame() -> some GameProtocol {
         let initialSecretColor = Color()
-        let secretValue = SecretColorValue(initialValue: initialSecretColor) { color in
+        let secretValue = SecretColorValue(initValue: initialSecretColor) { color in
             var updatedColor = color
             updatedColor.red = Array(0...255).randomElement()!
             updatedColor.green = Array(0...255).randomElement()!
